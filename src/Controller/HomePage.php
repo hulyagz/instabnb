@@ -1,7 +1,27 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hulyagunduz
- * Date: 2019-09-26
- * Time: 00:43
- */
+namespace App\Controller;
+
+use App\Entity\Annoncement;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class HomePage extends AbstractController
+{
+    /**
+     * @Route(
+     *     "/",
+     *     name="home"
+     * )
+     */
+    public function index()
+
+    {
+        $annonces = $this->getDoctrine()->getManager();
+        $tableau=$annonces->getRepository(Annoncement::class)->findByAnnonces(2);
+
+        return $this->render('style/home.html.twig', [
+            'controller_name' => 'HomePage',
+            'tableau'=>$tableau
+        ]);
+    }
+}
