@@ -14,8 +14,13 @@ class AnnoncementControllerDetail extends AbstractController
         $this->userManagerService = $userManagerService;
     }
     /**
+     * @Route("/{_locale/annonce/{id}/detail", name="detail", requirements={"_locale"="fr|en"})
+     */
+    /**
+    /**
      * @Route(
-     *     "/annonce/{id}/detail",
+     *     "/{_locale}/annonce/{id}/detail",
+
      *     name="detail",
      *     defaults={"id"=1},
      *     requirements={"id" = "\d+"}

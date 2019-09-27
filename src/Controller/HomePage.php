@@ -8,8 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomePage extends AbstractController
 {
     /**
+     * @Route("/{_locale}", name="home", requirements={"_locale"="fr|en"})
+     */
+    /**
      * @Route(
-     *     "/",
+     *     "/{_locale}",
      *     name="home"
      * )
      */

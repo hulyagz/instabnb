@@ -26,8 +26,12 @@ class AnnoncementControllerAdd extends AbstractController
         $this->userManagerService = $userManagerService;
     }
     /**
+     * @Route("/{_locale/add", name="add", requirements={"_locale"="fr|en"})
+     */
+    /**
+    /**
      * @Route(
-     *     "/add",
+     *     "/{_locale}/add",
      *     name="add",
      *     methods={"GET", "POST"},
 
